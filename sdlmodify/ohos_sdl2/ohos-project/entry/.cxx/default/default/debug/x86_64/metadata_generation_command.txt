@@ -1,0 +1,20 @@
+D:\601\DevEco Studio\sdk\default\openharmony\native\build-tools\cmake\bin\cmake.exe
+-DOHOS_STL=c++_shared
+-DSDL_TESTS=ON
+-DOHOS_ENABLE_HWASAN=ON
+-HD:\1224\ohos_sdl2\ohos-project\entry\src\main\cpp
+-BD:\1224\ohos_sdl2\ohos-project\entry\.cxx\default\default\debug\x86_64
+-DOHOS_ARCH=x86_64
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\1224\ohos_sdl2\ohos-project\entry\build\default\intermediates\cmake\default\obj\x86_64
+-DCMAKE_BUILD_TYPE=Debug
+-DOHOS_SDK_NATIVE=D:\601\DevEco Studio\sdk\default\openharmony\native
+-DCMAKE_SYSTEM_NAME=OHOS
+-DCMAKE_OHOS_ARCH_ABI=x86_64
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_TOOLCHAIN_FILE=D:\601\DevEco Studio\sdk\default\hms\native\build\cmake\hmos.toolchain.cmake
+-GNinja
+-DCMAKE_MAKE_PROGRAM=D:\601\DevEco Studio\sdk\default\openharmony\native\build-tools\cmake\bin\ninja.exe
+-DCMAKE_FIND_ROOT_PATH=D:\1224\ohos_sdl2\ohos-project\entry\.cxx\default\default\debug\hvigor\x86_64
+-DPACKAGE_FIND_FILE=D:\1224\ohos_sdl2\ohos-project\entry\.cxx\default\default\debug\hvigor\x86_64\summary.cmake
+--no-warn-unused-cli
+-DHMOS_SDK_NATIVE=D:\601\DevEco Studio\sdk\default\hms\native

@@ -1,0 +1,149 @@
+{
+  "ohos-module-entry": {
+    "SELECT_TARGET": "default",
+    "MODULE_BUILD_DIR": "D:\\1224\\ohos_sdl2\\ohos-project\\entry\\build",
+    "TARGETS": {
+      "default": {
+        "SOURCE_ROOT": "D:\\1224\\ohos_sdl2\\ohos-project\\entry\\src\\main",
+        "RESOURCES_PATH": [
+          "D:\\1224\\ohos_sdl2\\ohos-project\\entry\\src\\main\\resources"
+        ],
+        "BUILD_PATH": {
+          "OUTPUT_PATH": "D:\\1224\\ohos_sdl2\\ohos-project\\entry\\build\\default\\outputs\\default",
+          "INTERMEDIA_PATH": "D:\\1224\\ohos_sdl2\\ohos-project\\entry\\build\\default\\intermediates",
+          "JS_ASSETS_PATH": "D:\\1224\\ohos_sdl2\\ohos-project\\entry\\build\\default\\intermediates\\loader_out\\default",
+          "JS_LITE_ASSETS_PATH": "D:\\1224\\ohos_sdl2\\ohos-project\\entry\\build\\default\\intermediates\\loader_out_lite\\default",
+          "RES_PATH": "D:\\1224\\ohos_sdl2\\ohos-project\\entry\\build\\default\\intermediates\\res\\default",
+          "RES_PROFILE_PATH": "D:\\1224\\ohos_sdl2\\ohos-project\\entry\\build\\default\\intermediates\\res\\default\\resources\\base\\profile",
+          "ETS_SUPER_VISUAL_PATH": "D:\\1224\\ohos_sdl2\\ohos-project\\entry\\build\\default\\cache\\default\\default@CompileArkTS\\esmodule",
+          "JS_SUPER_VISUAL_PATH": "D:\\1224\\ohos_sdl2\\ohos-project\\entry\\build\\default\\cache\\default\\default@CompileJS\\jsbundle",
+          "WORKER_LOADER": "D:\\1224\\ohos_sdl2\\ohos-project\\entry\\build\\default\\intermediates\\loader\\default\\loader.json",
+          "MANIFEST_JSON": "D:\\1224\\ohos_sdl2\\ohos-project\\entry\\build\\default\\intermediates\\manifest\\default",
+          "OUTPUT_METADATA_JSON": "D:\\1224\\ohos_sdl2\\ohos-project\\entry\\build\\default\\intermediates\\hap_metadata\\default\\output_metadata.json",
+          "SOURCE_MAP_DIR": "D:\\1224\\ohos_sdl2\\ohos-project\\entry\\build\\default\\intermediates\\source_map\\default"
+        },
+        "BUILD_OPTION": {
+          "debuggable": true
+        }
+      }
+    },
+    "BUILD_OPTION": {
+      "default-default": {
+        "debuggable": true,
+        "copyFrom": "default",
+        "externalNativeOptions": {
+          "path": "./src/main/cpp/CMakeLists.txt",
+          "arguments": "-DOHOS_STL=c++_shared -DSDL_TESTS=ON -DOHOS_ENABLE_HWASAN=ON",
+          "abiFilters": [
+            "arm64-v8a",
+            "x86_64"
+          ],
+          "cppFlags": ""
+        }
+      }
+    },
+    "BUILD_PROFILE_OPT": {
+      "apiType": "stageMode",
+      "buildOption": {
+        "externalNativeOptions": {
+          "path": "./src/main/cpp/CMakeLists.txt",
+          "arguments": "-DOHOS_STL=c++_shared -DSDL_TESTS=ON -DOHOS_ENABLE_HWASAN=ON",
+          "abiFilters": [
+            "arm64-v8a",
+            "x86_64"
+          ],
+          "cppFlags": ""
+        }
+      },
+      "targets": [
+        {
+          "name": "default",
+          "runtimeOS": "HarmonyOS"
+        }
+      ]
+    },
+    "BUILD_CACHE_DIR": ""
+  },
+  "ohos-project": {
+    "SELECT_PRODUCT_NAME": "default",
+    "MODULE_BUILD_DIR": "D:\\1224\\ohos_sdl2\\ohos-project\\build",
+    "BUNDLE_NAME": "com.example.myapplication",
+    "BUILD_PATH": {
+      "OUTPUT_PATH": "D:\\1224\\ohos_sdl2\\ohos-project\\build\\outputs\\default"
+    },
+    "MODULES": [
+      {
+        "name": "entry",
+        "srcPath": "D:\\1224\\ohos_sdl2\\ohos-project\\entry",
+        "targets": [
+          {
+            "name": "default",
+            "applyToProducts": [
+              "default"
+            ]
+          }
+        ],
+        "belongProjectPath": "D:\\1224\\ohos_sdl2\\ohos-project"
+      }
+    ],
+    "PROFILE_OPT": {
+      "app": {
+        "products": [
+          {
+            "name": "default",
+            "signingConfig": "default",
+            "compatibleSdkVersion": "5.0.1(13)",
+            "runtimeOS": "HarmonyOS"
+          }
+        ],
+        "buildModeSet": [
+          {
+            "name": "debug"
+          },
+          {
+            "name": "release"
+          }
+        ],
+        "signingConfigs": [
+          {
+            "name": "default",
+            "type": "HarmonyOS",
+            "material": {
+              "certpath": "C:\\Users\\admin\\.ohos\\config\\default_ohos-project_RUhGi0Dezib43RNqBh-wmKESZpRhFSyMqlQmjxZXtyY=.cer",
+              "keyAlias": "debugKey",
+              "keyPassword": "0000001BDFCB73DB71DC06192763C11552EF263F7E6BE1F07960AA87B532EC518446763DF25A287CA172BE",
+              "profile": "C:\\Users\\admin\\.ohos\\config\\default_ohos-project_RUhGi0Dezib43RNqBh-wmKESZpRhFSyMqlQmjxZXtyY=.p7b",
+              "signAlg": "SHA256withECDSA",
+              "storeFile": "C:\\Users\\admin\\.ohos\\config\\default_ohos-project_RUhGi0Dezib43RNqBh-wmKESZpRhFSyMqlQmjxZXtyY=.p12",
+              "storePassword": "0000001BE7138C29FD55D5E7CECD64EC22D8A4C15A1842868B95ED21342E2616E7059BA4506BD428D5929F"
+            }
+          }
+        ]
+      },
+      "modules": [
+        {
+          "name": "entry",
+          "srcPath": "./entry",
+          "targets": [
+            {
+              "name": "default",
+              "applyToProducts": [
+                "default"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "CONFIG_PROPERTIES": {
+      "enableSignTask": true,
+      "skipNativeIncremental": false,
+      "hvigor.keepDependency": true
+    },
+    "OVERALL_PROJECT_PATHS": [
+      "D:\\1224\\ohos_sdl2\\ohos-project"
+    ],
+    "BUILD_CACHE_DIR": ""
+  },
+  "version": 1
+}

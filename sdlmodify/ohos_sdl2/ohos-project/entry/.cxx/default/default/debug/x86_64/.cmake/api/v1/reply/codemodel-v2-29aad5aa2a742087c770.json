@@ -1,0 +1,203 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "sdl2",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-sdl2-Debug-cedff95f826232d9752b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.11"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "D:/1224/ohos_sdl2",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"build" : "cjson",
+					"childIndexes" : 
+					[
+						3,
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-cjson-Debug-6dfdffcee658edd4e3c7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "D:/1224/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-source",
+					"targetIndexes" : 
+					[
+						3,
+						5
+					]
+				},
+				{
+					"build" : "cjson/tests",
+					"jsonFile" : "directory-cjson.tests-Debug-0423375f0866c0a14e88.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "D:/1224/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-source/tests"
+				},
+				{
+					"build" : "cjson/fuzzing",
+					"jsonFile" : "directory-cjson.fuzzing-Debug-e4da2906b3dd5698c032.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "D:/1224/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-source/fuzzing"
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "entry",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "SDL2",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"name" : "cJSON",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						3,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "SDL2::@5c348aa8f160714199f9",
+					"jsonFile" : "target-SDL2-Debug-4c24d1543ad47756df03.json",
+					"name" : "SDL2",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "SDL2-static::@5c348aa8f160714199f9",
+					"jsonFile" : "target-SDL2-static-Debug-3d48dbd74b33fcbc58d5.json",
+					"name" : "SDL2-static",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "SDL2main::@5c348aa8f160714199f9",
+					"jsonFile" : "target-SDL2main-Debug-d2c7af9ab808330db7ff.json",
+					"name" : "SDL2main",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "cjson::@5229f3b4a20129d7edbc",
+					"jsonFile" : "target-cjson-Debug-936c116459a10791571a.json",
+					"name" : "cjson",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "entry::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-entry-Debug-0541eb9ca13e0391d585.json",
+					"name" : "entry",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "uninstall::@5229f3b4a20129d7edbc",
+					"jsonFile" : "target-uninstall-Debug-abe0c6103343ceb230c5.json",
+					"name" : "uninstall",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/1224/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64",
+		"source" : "D:/1224/ohos_sdl2/ohos-project/entry/src/main/cpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

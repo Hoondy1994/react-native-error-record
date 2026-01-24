@@ -1,0 +1,3 @@
+D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/CMakeFiles/cjson.dir
+D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/CMakeFiles/edit_cache.dir
+D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/CMakeFiles/rebuild_cache.dir

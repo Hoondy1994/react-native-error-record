@@ -1,0 +1,200 @@
+[2025-07-31T15:52:19.948] [DEBUG] debug-file - clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+[22/38] Building C object sdl2/CMakeFiles/SDL2-static.dir/src/filesystem/ohos/SDL_sysfilesystem.c.o
+
+[2025-07-31T15:52:19.949] [DEBUG] debug-file - clang: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+[23/38] Building C object sdl2/CMakeFiles/SDL2-static.dir/src/video/ohos/SDL_ohosgl.c.o
+clang: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+[24/38] Building C object sdl2/CMakeFiles/SDL2-static.dir/src/video/ohos/SDL_ohosmouse.c.o
+
+[2025-07-31T15:52:19.951] [DEBUG] debug-file - clang: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+[25/38] Building C object sdl2/CMakeFiles/SDL2-static.dir/src/video/ohos/SDL_ohostouch.c.o
+
+[2025-07-31T15:52:19.988] [DEBUG] debug-file - clang: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+[26/38] Building C object sdl2/CMakeFiles/SDL2-static.dir/src/file/SDL_rwops.c.o
+clang: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+D:/0730/ohos_sdl2/ohos_sdl2/src/file/SDL_rwops.c:620:18: warning: incompatible function pointer types assigning to 'int (*)(struct SDL_RWops *)' from 'int (SDL_RWops *, SDL_bool)' (aka 'int (struct SDL_RWops *, SDL_bool)') [-Wincompatible-function-pointer-types]
+    rwops->close = OHOS_FileClose;
+                 ^ ~~~~~~~~~~~~~~
+1 warning generated.
+[27/38] Building C object sdl2/CMakeFiles/SDL2-static.dir/src/video/ohos/SDL_ohoskeyboard.c.o
+
+[2025-07-31T15:52:20.542] [DEBUG] debug-file - clang: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohoskeyboard.c:510:5: warning: call to undeclared function 'SDL_Log'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    SDL_Log("OHOS TranslateKeycode, unknown keycode=%d\n", keycode);
+    ^
+1 warning generated.
+[28/38] Building C object sdl2/CMakeFiles/SDL2-static.dir/src/video/ohos/SDL_ohosevents.c.o
+clang: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohosevents.c:114:17: warning: call to undeclared function 'OHOS_StartTextInput'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+                OHOS_StartTextInput(thisDevice); /* Only showTextInput */
+                ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohosevents.c:178:17: warning: call to undeclared function 'OHOS_StartTextInput'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+                OHOS_StartTextInput(thisDevice->windows); /* Only showTextInput */
+                ^
+2 warnings generated.
+[29/38] Building C object sdl2/CMakeFiles/SDL2-static.dir/src/video/ohos/SDL_ohosvulkan.c.o
+clang: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohosvulkan.c:34:12: warning: unused variable 'i' [-Wunused-variable]
+    Uint32 i = 0;
+           ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohosvulkan.c:36:14: warning: unused variable 'hasXComponentExtension' [-Wunused-variable]
+    SDL_bool hasXComponentExtension = SDL_FALSE;
+             ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohosvulkan.c:35:12: warning: unused variable 'extensionCount' [-Wunused-variable]
+    Uint32 extensionCount = 0;
+           ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohosvulkan.c:37:14: warning: unused variable 'hasOHOSXComponentExtension' [-Wunused-variable]
+    SDL_bool hasOHOSXComponentExtension = SDL_FALSE;
+             ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohosvulkan.c:114:24: warning: implicit conversion from enumeration type 'enum OhosVkStructureType' to different enumeration type 'VkStructureType' (aka 'enum VkStructureType') [-Wenum-conversion]
+    createInfo.sType = VK_STRUCTURE_TYPE_OHOS_XCOMPONENT_CREATE_INFO_KHR;
+                     ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohosvulkan.c:117:23: warning: incompatible pointer types assigning to 'struct OHNativeWindow *' from 'OHNativeWindow *' (aka 'struct NativeWindow *') [-Wincompatible-pointer-types]
+    createInfo.window = windowData->native_window;
+                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+6 warnings generated.
+[30/38] Building C object sdl2/CMakeFiles/SDL2-static.dir/src/video/ohos/SDL_ohosvideo.c.o
+clang: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohosvideo.c:187:5: warning: call to undeclared function 'OHOS_InitTouch'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    OHOS_InitTouch();
+    ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohosvideo.c:189:5: warning: call to undeclared function 'OHOS_InitMouse'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    OHOS_InitMouse();
+    ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohosvideo.c:197:5: warning: call to undeclared function 'OHOS_QuitMouse'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    OHOS_QuitMouse();
+    ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohosvideo.c:198:5: warning: call to undeclared function 'OHOS_QuitTouch'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    OHOS_QuitTouch();
+    ^
+4 warnings generated.
+[31/38] Building C object sdl2/CMakeFiles/SDL2-static.dir/src/video/ohos/SDL_ohoswindow.c.o
+clang: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohoswindow.c:160:32: warning: incompatible pointer types assigning to 'ANativeWindow *' (aka 'struct ANativeWindow *') from 'OHNativeWindow *' (aka 'struct NativeWindow *') [-Wincompatible-pointer-types]
+        info->info.ohos.window = data->native_window;
+                               ^ ~~~~~~~~~~~~~~~~~~~
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohoswindow.c:215:39: warning: passing 'const char *' to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+    while (!OHOS_FindNativeXcomPoment(strID, nativeXComponent)) {
+                                      ^~~~~
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/../../core/ohos/SDL_ohosplugin_c.h:28:38: note: passing argument to parameter 'id' here
+bool OHOS_FindNativeXcomPoment(char *id, OH_NativeXComponent **nativeXComponent);
+                                     ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohoswindow.c:260:32: warning: passing 'const void *' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        OHOS_NAPI_AddChildNode(data, &window->ohosHandle, window->xcompentId, windowPosition);
+                               ^~~~
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/../../core/ohos/SDL_ohos.h:81:46: note: passing argument to parameter 'parent' here
+extern SDL_bool OHOS_NAPI_AddChildNode(void* parent, void **child, char *xcompentId, WindowPosition *windowPosition);
+                                             ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohoswindow.c:212:13: warning: unused function 'OHOS_WaitGetNativeXcompent' [-Wunused-function]
+static void OHOS_WaitGetNativeXcompent(const char *strID, pthread_t tid, OH_NativeXComponent **nativeXComponent)
+            ^
+4 warnings generated.
+[32/38] Building C object sdl2/CMakeFiles/SDL2-static.dir/src/audio/ohos/SDL_ohosaudiomanager.c.o
+clang: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+D:/0730/ohos_sdl2/ohos_sdl2/src/audio/ohos/SDL_ohosaudiomanager.c:345:93: warning: incompatible pointer types passing 'int *' to parameter of type 'OH_AudioStream_SampleFormat *' [-Wincompatible-pointer-types]
+        if (AUDIOSTREAM_SUCCESS != OH_AudioCapturer_GetSampleFormat(private->audioCapturer, &audioFormat)) {
+                                                                                            ^~~~~~~~~~~~
+D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/sysroot/usr/include/ohaudio/native_audiocapturer.h:200:34: note: passing argument to parameter 'sampleFormat' here
+    OH_AudioStream_SampleFormat* sampleFormat);
+                                 ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/audio/ohos/SDL_ohosaudiomanager.c:366:93: warning: incompatible pointer types passing 'int *' to parameter of type 'OH_AudioStream_SampleFormat *' [-Wincompatible-pointer-types]
+        if (AUDIOSTREAM_SUCCESS != OH_AudioRenderer_GetSampleFormat(private->audioRenderer, &audioFormat)) {
+                                                                                            ^~~~~~~~~~~~
+D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/sysroot/usr/include/ohaudio/native_audiorenderer.h:185:34: note: passing argument to parameter 'sampleFormat' here
+    OH_AudioStream_SampleFormat* sampleFormat);
+                                 ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/audio/ohos/SDL_ohosaudiomanager.c:584:8: warning: type specifier missing, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]
+static OHOSAUDIO_NATIVE_CloseRender(SDL_AudioDevice *device)
+~~~~~~ ^
+int
+D:/0730/ohos_sdl2/ohos_sdl2/src/audio/ohos/SDL_ohosaudiomanager.c:626:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+D:/0730/ohos_sdl2/ohos_sdl2/src/audio/ohos/SDL_ohosaudiomanager.c:40:29: warning: unused variable 'gAudioRendorStatus' [-Wunused-variable]
+static OH_AudioStream_State gAudioRendorStatus;
+                            ^
+5 warnings generated.
+[33/38] Building CXX object sdl2/CMakeFiles/SDL2-static.dir/src/core/ohos/SDL_ohosthreadsafe.cpp.o
+FAILED: sdl2/CMakeFiles/SDL2-static.dir/src/core/ohos/SDL_ohosthreadsafe.cpp.o 
+"D:\5.1.1.420\DevEco Studio\sdk\default\openharmony\native\llvm\bin\clang++.exe" --target=x86_64-linux-ohos --gcc-toolchain="D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm" --sysroot="D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/sysroot" -DOHOS_PLATFORM -I"D:/5.1.1.420/DevEco Studio/sdk/default/hms/native/sysroot/usr/include" -ID:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/sdl2/include -ID:/0730/ohos_sdl2/ohos_sdl2/include -ID:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-source -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -D__MUSL__ -O0 -g -fno-limit-debug-info -MD -MT sdl2/CMakeFiles/SDL2-static.dir/src/core/ohos/SDL_ohosthreadsafe.cpp.o -MF sdl2\CMakeFiles\SDL2-static.dir\src\core\ohos\SDL_ohosthreadsafe.cpp.o.d -o sdl2/CMakeFiles/SDL2-static.dir/src/core/ohos/SDL_ohosthreadsafe.cpp.o -c D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/SDL_ohosthreadsafe.cpp
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/SDL_ohosthreadsafe.cpp:194:21: error: unknown type name 'Node'; did you mean 'SDL_EMBEDDED_WINDOW_ADAPTER::Node'?
+    std::shared_ptr<Node> child2(child1); 
+                    ^~~~
+                    SDL_EMBEDDED_WINDOW_ADAPTER::Node
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/adapter_c/SDL_AdapterC.h:91:8: note: 'SDL_EMBEDDED_WINDOW_ADAPTER::Node' declared here
+struct Node {
+       ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/SDL_ohosthreadsafe.cpp:206:51: warning: format specifies type 'void *' but the argument has type 'double' [-Wformat]
+        SDL_Log("data->valuedouble111 ======%p.", data->valuedouble);
+                                            ~~    ^~~~~~~~~~~~~~~~~
+                                            %f
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/SDL_ohosthreadsafe.cpp:208:37: warning: format specifies type 'void *' but the argument has type 'long long' [-Wformat]
+    SDL_Log("data->temp ======%p.", tmp1);
+                              ~~    ^~~~
+                              %lld
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/SDL_ohosthreadsafe.cpp:531:47: warning: adding 'int' to a string does not append to the string [-Wstring-plus-int]
+    std::string threadname = OHOS_THREAD_NAME + g_threadName;
+                             ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/SDL_ohosthreadsafe.cpp:531:47: note: use array indexing to silence this warning
+    std::string threadname = OHOS_THREAD_NAME + g_threadName;
+                                              ^
+                             &                [             ]
+3 warnings and 1 error generated.
+[34/38] Building CXX object sdl2/CMakeFiles/SDL2-static.dir/src/core/ohos/SDL_ohosplugin.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/SDL_ohosplugin.cpp:31:13: warning: deleting pointer to incomplete type 'OH_NativeXComponent' may cause undefined behavior [-Wdelete-incomplete]
+            delete iter->second;
+            ^      ~~~~~~~~~~~~
+D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/sysroot/usr/include/ace/xcomponent/native_interface_xcomponent.h:320:16: note: forward declaration of 'OH_NativeXComponent'
+typedef struct OH_NativeXComponent OH_NativeXComponent;
+               ^
+1 warning generated.
+[35/38] Building CXX object sdl2/CMakeFiles/SDL2.dir/src/core/ohos/SDL_ohos.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+In file included from D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/SDL_ohos.cpp:45:
+In file included from D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/../../audio/ohos/SDL_ohosaudio.h:19:
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/../../audio/ohos/../SDL_sysaudio.h:37:9: warning: '_THIS' macro redefined [-Wmacro-redefined]
+#define _THIS   SDL_AudioDevice *_this
+        ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/../../video/ohos/../SDL_sysvideo.h:151:9: note: previous definition is here
+#define _THIS   SDL_VideoDevice *_this
+        ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/SDL_ohos.cpp:204:47: warning: format specifies type 'void *' but the argument has type 'unsigned long long' [-Wformat]
+      SDL_Log("data->position11111 ======%p.",position);
+                                         ~~   ^~~~~~~~
+                                         %llu
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/SDL_ohos.cpp:209:51: warning: format specifies type 'void *' but the argument has type 'unsigned long long' [-Wformat]
+    SDL_Log("enter data->position11111 ======%p.",position);
+                                             ~~   ^~~~~~~~
+                                             %llu
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/SDL_ohos.cpp:439:47: warning: format specifies type 'long' but the argument has type 'unsigned long long' [-Wformat]
+    SDL_Log("xcomponentpixel1111 ======%ld.", xcomponentpixel);
+                                       ~~~    ^~~~~~~~~~~~~~~
+                                       %llu
+4 warnings generated.
+[36/38] Building CXX object sdl2/CMakeFiles/SDL2-static.dir/src/core/ohos/SDL_ohos.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+In file included from D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/SDL_ohos.cpp:45:
+In file included from D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/../../audio/ohos/SDL_ohosaudio.h:19:
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/../../audio/ohos/../SDL_sysaudio.h:37:9: warning: '_THIS' macro redefined [-Wmacro-redefined]
+#define _THIS   SDL_AudioDevice *_this
+        ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/../../video/ohos/../SDL_sysvideo.h:151:9: note: previous definition is here
+#define _THIS   SDL_VideoDevice *_this
+        ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/SDL_ohos.cpp:204:47: warning: format specifies type 'void *' but the argument has type 'unsigned long long' [-Wformat]
+      SDL_Log("data->position11111 ======%p.",position);
+                                         ~~   ^~~~~~~~
+                                         %llu
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/SDL_ohos.cpp:209:51: warning: format specifies type 'void *' but the argument has type 'unsigned long long' [-Wformat]
+    SDL_Log("enter data->position11111 ======%p.",position);
+                                             ~~   ^~~~~~~~
+                                             %llu
+D:/0730/ohos_sdl2/ohos_sdl2/src/core/ohos/SDL_ohos.cpp:439:47: warning: format specifies type 'long' but the argument has type 'unsigned long long' [-Wformat]
+    SDL_Log("xcomponentpixel1111 ======%ld.", xcomponentpixel);
+                                       ~~~    ^~~~~~~~~~~~~~~
+                                       %llu
+4 warnings generated.
+ninja: build stopped: subcommand failed.
+

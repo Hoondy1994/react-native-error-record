@@ -1,0 +1,267 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"D:/1224/ohos_sdl2/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2284,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2302,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2307,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2322,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2347,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2350,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2352,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"sdl2/libSDL2d.a"
+			],
+			"targetId" : "SDL2-static::@5c348aa8f160714199f9",
+			"targetIndex" : 1,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"D:/1224/ohos_sdl2/ohos-project/entry/build/default/intermediates/cmake/default/obj/x86_64/libSDL2.so"
+			],
+			"targetId" : "SDL2::@5c348aa8f160714199f9",
+			"targetIndex" : 0,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"sdl2/libSDL2maind.a"
+			],
+			"targetId" : "SDL2main::@5c348aa8f160714199f9",
+			"targetIndex" : 2,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/SDL2",
+			"exportName" : "SDL2Targets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "SDL2-static::@5c348aa8f160714199f9",
+					"index" : 1
+				},
+				{
+					"id" : "SDL2::@5c348aa8f160714199f9",
+					"index" : 0
+				},
+				{
+					"id" : "SDL2main::@5c348aa8f160714199f9",
+					"index" : 2
+				}
+			],
+			"paths" : 
+			[
+				"sdl2/CMakeFiles/Export/f084604df1a27ef5b4fef7c7544737d1/SDL2Targets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Devel",
+			"destination" : "lib/cmake/SDL2",
+			"paths" : 
+			[
+				"D:/1224/ohos_sdl2/SDL2Config.cmake",
+				"D:/1224/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/SDL2ConfigVersion.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "include/SDL2",
+			"paths" : 
+			[
+				"D:/1224/ohos_sdl2/include/SDL.h",
+				"D:/1224/ohos_sdl2/include/SDL_assert.h",
+				"D:/1224/ohos_sdl2/include/SDL_atomic.h",
+				"D:/1224/ohos_sdl2/include/SDL_audio.h",
+				"D:/1224/ohos_sdl2/include/SDL_bits.h",
+				"D:/1224/ohos_sdl2/include/SDL_blendmode.h",
+				"D:/1224/ohos_sdl2/include/SDL_clipboard.h",
+				"D:/1224/ohos_sdl2/include/SDL_config_android.h",
+				"D:/1224/ohos_sdl2/include/SDL_config_iphoneos.h",
+				"D:/1224/ohos_sdl2/include/SDL_config_macosx.h",
+				"D:/1224/ohos_sdl2/include/SDL_config_minimal.h",
+				"D:/1224/ohos_sdl2/include/SDL_config_ohos.h",
+				"D:/1224/ohos_sdl2/include/SDL_config_os2.h",
+				"D:/1224/ohos_sdl2/include/SDL_config_pandora.h",
+				"D:/1224/ohos_sdl2/include/SDL_config_psp.h",
+				"D:/1224/ohos_sdl2/include/SDL_config_windows.h",
+				"D:/1224/ohos_sdl2/include/SDL_config_winrt.h",
+				"D:/1224/ohos_sdl2/include/SDL_config_wiz.h",
+				"D:/1224/ohos_sdl2/include/SDL_copying.h",
+				"D:/1224/ohos_sdl2/include/SDL_cpuinfo.h",
+				"D:/1224/ohos_sdl2/include/SDL_egl.h",
+				"D:/1224/ohos_sdl2/include/SDL_endian.h",
+				"D:/1224/ohos_sdl2/include/SDL_error.h",
+				"D:/1224/ohos_sdl2/include/SDL_events.h",
+				"D:/1224/ohos_sdl2/include/SDL_filesystem.h",
+				"D:/1224/ohos_sdl2/include/SDL_gamecontroller.h",
+				"D:/1224/ohos_sdl2/include/SDL_gesture.h",
+				"D:/1224/ohos_sdl2/include/SDL_haptic.h",
+				"D:/1224/ohos_sdl2/include/SDL_hints.h",
+				"D:/1224/ohos_sdl2/include/SDL_joystick.h",
+				"D:/1224/ohos_sdl2/include/SDL_keyboard.h",
+				"D:/1224/ohos_sdl2/include/SDL_keycode.h",
+				"D:/1224/ohos_sdl2/include/SDL_loadso.h",
+				"D:/1224/ohos_sdl2/include/SDL_log.h",
+				"D:/1224/ohos_sdl2/include/SDL_main.h",
+				"D:/1224/ohos_sdl2/include/SDL_messagebox.h",
+				"D:/1224/ohos_sdl2/include/SDL_metal.h",
+				"D:/1224/ohos_sdl2/include/SDL_mouse.h",
+				"D:/1224/ohos_sdl2/include/SDL_mutex.h",
+				"D:/1224/ohos_sdl2/include/SDL_name.h",
+				"D:/1224/ohos_sdl2/include/SDL_opengl.h",
+				"D:/1224/ohos_sdl2/include/SDL_opengl_glext.h",
+				"D:/1224/ohos_sdl2/include/SDL_opengles.h",
+				"D:/1224/ohos_sdl2/include/SDL_opengles2.h",
+				"D:/1224/ohos_sdl2/include/SDL_opengles2_gl2.h",
+				"D:/1224/ohos_sdl2/include/SDL_opengles2_gl2ext.h",
+				"D:/1224/ohos_sdl2/include/SDL_opengles2_gl2platform.h",
+				"D:/1224/ohos_sdl2/include/SDL_opengles2_khrplatform.h",
+				"D:/1224/ohos_sdl2/include/SDL_pixels.h",
+				"D:/1224/ohos_sdl2/include/SDL_platform.h",
+				"D:/1224/ohos_sdl2/include/SDL_power.h",
+				"D:/1224/ohos_sdl2/include/SDL_quit.h",
+				"D:/1224/ohos_sdl2/include/SDL_rect.h",
+				"D:/1224/ohos_sdl2/include/SDL_render.h",
+				"D:/1224/ohos_sdl2/include/SDL_revision.h",
+				"D:/1224/ohos_sdl2/include/SDL_rwops.h",
+				"D:/1224/ohos_sdl2/include/SDL_scancode.h",
+				"D:/1224/ohos_sdl2/include/SDL_sensor.h",
+				"D:/1224/ohos_sdl2/include/SDL_shape.h",
+				"D:/1224/ohos_sdl2/include/SDL_stdinc.h",
+				"D:/1224/ohos_sdl2/include/SDL_surface.h",
+				"D:/1224/ohos_sdl2/include/SDL_system.h",
+				"D:/1224/ohos_sdl2/include/SDL_syswm.h",
+				"D:/1224/ohos_sdl2/include/SDL_test.h",
+				"D:/1224/ohos_sdl2/include/SDL_test_assert.h",
+				"D:/1224/ohos_sdl2/include/SDL_test_common.h",
+				"D:/1224/ohos_sdl2/include/SDL_test_compare.h",
+				"D:/1224/ohos_sdl2/include/SDL_test_crc32.h",
+				"D:/1224/ohos_sdl2/include/SDL_test_font.h",
+				"D:/1224/ohos_sdl2/include/SDL_test_fuzzer.h",
+				"D:/1224/ohos_sdl2/include/SDL_test_harness.h",
+				"D:/1224/ohos_sdl2/include/SDL_test_images.h",
+				"D:/1224/ohos_sdl2/include/SDL_test_log.h",
+				"D:/1224/ohos_sdl2/include/SDL_test_md5.h",
+				"D:/1224/ohos_sdl2/include/SDL_test_memory.h",
+				"D:/1224/ohos_sdl2/include/SDL_test_random.h",
+				"D:/1224/ohos_sdl2/include/SDL_thread.h",
+				"D:/1224/ohos_sdl2/include/SDL_timer.h",
+				"D:/1224/ohos_sdl2/include/SDL_touch.h",
+				"D:/1224/ohos_sdl2/include/SDL_types.h",
+				"D:/1224/ohos_sdl2/include/SDL_version.h",
+				"D:/1224/ohos_sdl2/include/SDL_video.h",
+				"D:/1224/ohos_sdl2/include/SDL_vulkan.h",
+				"D:/1224/ohos_sdl2/include/begin_code.h",
+				"D:/1224/ohos_sdl2/include/close_code.h",
+				"D:/1224/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/sdl2/include/SDL_config.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				"D:/1224/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/sdl2/sdl2.pc"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "Unspecified",
+			"destination" : "bin",
+			"paths" : 
+			[
+				"D:/1224/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/sdl2/sdl2-config"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 7,
+			"component" : "Unspecified",
+			"destination" : "C:/Program Files (x86)/entry/share/aclocal",
+			"paths" : 
+			[
+				"D:/1224/ohos_sdl2/sdl2.m4"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "sdl2",
+		"source" : "D:/1224/ohos_sdl2"
+	}
+}

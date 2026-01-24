@@ -1,0 +1,55 @@
+{
+  "lockVersion": "1.0",
+  "settings": {
+    "resolveConflict": true,
+    "resolveConflictStrict": false,
+    "installAll": true
+  },
+  "overrides": {},
+  "overrideDependencyMap": {},
+  "modules": {
+    ".": {
+      "name": "",
+      "dependencies": {},
+      "devDependencies": {
+        "@ohos/hypium": {
+          "specifier": "1.0.13",
+          "version": "1.0.13"
+        }
+      },
+      "dynamicDependencies": {},
+      "maskedByOverrideDependencyMap": false
+    },
+    "entry": {
+      "name": "entry",
+      "dependencies": {
+        "@types/libSDL2d.so": {
+          "specifier": "file:entry/src/main/cpp/types/libSDL2d",
+          "version": "file:entry/src/main/cpp/types/libSDL2d"
+        }
+      },
+      "devDependencies": {},
+      "dynamicDependencies": {},
+      "maskedByOverrideDependencyMap": false
+    }
+  },
+  "packages": {
+    "@ohos/hypium@1.0.13": {
+      "integrity": "sha512-d0+XvDeAYk5Vgl6JQ8Q1G+NPmTyJI8qgZ1PwPfcUbx/dfyKVAAv9lz1XtVNhYypyWEKqAzu8zMAC9GuHo2Y53Q==",
+      "storePath": "oh_modules/.ohpm/@ohos+hypium@1.0.13",
+      "dependencies": {},
+      "dynamicDependencies": {},
+      "dev": true,
+      "dynamic": false,
+      "maskedByOverrideDependencyMap": false
+    },
+    "@types/libSDL2d.so@file:entry/src/main/cpp/types/libSDL2d": {
+      "storePath": "entry/src/main/cpp/types/libSDL2d",
+      "dependencies": {},
+      "dynamicDependencies": {},
+      "dev": false,
+      "dynamic": false,
+      "maskedByOverrideDependencyMap": false
+    }
+  }
+}

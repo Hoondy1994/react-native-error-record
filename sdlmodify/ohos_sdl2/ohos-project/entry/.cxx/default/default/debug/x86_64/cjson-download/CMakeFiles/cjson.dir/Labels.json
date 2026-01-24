@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/CMakeFiles/cjson"
+		},
+		{
+			"file" : "D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/CMakeFiles/cjson.rule"
+		},
+		{
+			"file" : "D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/CMakeFiles/cjson-complete.rule"
+		},
+		{
+			"file" : "D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-build.rule"
+		},
+		{
+			"file" : "D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-configure.rule"
+		},
+		{
+			"file" : "D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-download.rule"
+		},
+		{
+			"file" : "D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-install.rule"
+		},
+		{
+			"file" : "D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-mkdir.rule"
+		},
+		{
+			"file" : "D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-patch.rule"
+		},
+		{
+			"file" : "D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-test.rule"
+		},
+		{
+			"file" : "D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"cjson"
+		],
+		"name" : "cjson"
+	}
+}

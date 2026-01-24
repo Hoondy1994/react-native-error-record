@@ -1,0 +1,3 @@
+D:\1224\ohos_sdl2\ohos-project\entry\.cxx\default\default\debug\arm64-v8a\cjson-source\cJSON.h
+D:\1224\ohos_sdl2\ohos-project\entry\.cxx\default\default\debug\arm64-v8a\cjson\CMakeFiles\uninstall
+D:\1224\ohos_sdl2\ohos-project\entry\.cxx\default\default\debug\arm64-v8a\cjson\CMakeFiles\uninstall.rule

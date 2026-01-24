@@ -1,0 +1,118 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"D:/1224/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-source/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 149,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 150,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 151,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 163,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 227,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "C:/Program Files (x86)/entry/include/cjson",
+			"paths" : 
+			[
+				"D:/1224/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-source/cJSON.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "C:/Program Files (x86)/entry/lib/pkgconfig",
+			"paths" : 
+			[
+				"D:/1224/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson/libcjson.pc"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "C:/Program Files (x86)/entry/lib",
+			"paths" : 
+			[
+				"cjson/libcjson.a"
+			],
+			"targetId" : "cjson::@5229f3b4a20129d7edbc",
+			"targetIndex" : 3,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "C:/Program Files (x86)/entry/lib/cmake/cJSON",
+			"exportName" : "cjson",
+			"exportTargets" : 
+			[
+				{
+					"id" : "cjson::@5229f3b4a20129d7edbc",
+					"index" : 3
+				}
+			],
+			"paths" : 
+			[
+				"cjson/CMakeFiles/Export/f94e5772c59c60981789bdfb5c99ba43/cjson.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "C:/Program Files (x86)/entry/lib/cmake/cJSON",
+			"paths" : 
+			[
+				"D:/1224/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson/cJSONConfig.cmake",
+				"D:/1224/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson/cJSONConfigVersion.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "cjson",
+		"source" : "D:/1224/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-source"
+	}
+}

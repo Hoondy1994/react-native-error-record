@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/build-tools/cmake/bin/cmake.exe;-P;D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/download-cjson.cmake;COMMAND;D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/build-tools/cmake/bin/cmake.exe;-P;D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/verify-cjson.cmake;COMMAND;D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/build-tools/cmake/bin/cmake.exe;-P;D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/extract-cjson.cmake
+source_dir=D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-source
+work_dir=D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64
+url(s)=https://gitee.com/mirrors/cJSON/repository/archive/v1.7.15
+hash=SHA256=7a10eccfbf907bf0d6adc695dc7e503f33b83f50a8f31470b82f92352ecc57e4
+no_extract=
+

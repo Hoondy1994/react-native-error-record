@@ -1,0 +1,14 @@
+# Target labels
+ cjson
+# Source files and their labels
+D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/arm64-v8a/cjson-download/CMakeFiles/cjson
+D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/arm64-v8a/cjson-download/CMakeFiles/cjson.rule
+D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/arm64-v8a/cjson-download/CMakeFiles/cjson-complete.rule
+D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/arm64-v8a/cjson-download/cjson-prefix/src/cjson-stamp/cjson-build.rule
+D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/arm64-v8a/cjson-download/cjson-prefix/src/cjson-stamp/cjson-configure.rule
+D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/arm64-v8a/cjson-download/cjson-prefix/src/cjson-stamp/cjson-download.rule
+D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/arm64-v8a/cjson-download/cjson-prefix/src/cjson-stamp/cjson-install.rule
+D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/arm64-v8a/cjson-download/cjson-prefix/src/cjson-stamp/cjson-mkdir.rule
+D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/arm64-v8a/cjson-download/cjson-prefix/src/cjson-stamp/cjson-patch.rule
+D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/arm64-v8a/cjson-download/cjson-prefix/src/cjson-stamp/cjson-test.rule
+D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/arm64-v8a/cjson-download/cjson-prefix/src/cjson-stamp/cjson-update.rule

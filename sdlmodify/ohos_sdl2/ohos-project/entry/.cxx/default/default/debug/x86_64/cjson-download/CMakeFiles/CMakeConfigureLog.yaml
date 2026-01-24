@@ -1,0 +1,11 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/build-tools/cmake/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:16 (PROJECT)"
+    message: |
+      The system is: Windows - 10.0.19045 - AMD64
+...

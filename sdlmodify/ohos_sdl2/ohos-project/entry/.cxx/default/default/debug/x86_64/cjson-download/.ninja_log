@@ -1,0 +1,21 @@
+# ninja log v6
+2	457	7755682353576471	cjson-prefix/src/cjson-stamp/cjson-mkdir	141639aad2c944b9
+3530	4032	7755682389326601	cjson-prefix/src/cjson-stamp/cjson-update	fad2d21aa4084d4a
+3530	4032	7755682389326601	D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-update	fad2d21aa4084d4a
+2	457	7755682353576471	D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-mkdir	141639aad2c944b9
+457	3529	7755682384296467	cjson-prefix/src/cjson-stamp/cjson-download	3bdfa541130dae69
+4032	4523	7755682394246474	D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-patch	9f030d44791eae9d
+457	3529	7755682384296467	D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-download	3bdfa541130dae69
+4032	4523	7755682394246474	cjson-prefix/src/cjson-stamp/cjson-patch	9f030d44791eae9d
+4523	5050	7755682399516470	cjson-prefix/src/cjson-stamp/cjson-configure	e4aad0a74ab11034
+4523	5050	7755682399516470	D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-configure	e4aad0a74ab11034
+5576	6113	7755682410136468	cjson-prefix/src/cjson-stamp/cjson-install	da08275ca993dcbc
+5050	5576	7755682404766471	cjson-prefix/src/cjson-stamp/cjson-build	6f41321d5296b83d
+5050	5576	7755682404766471	D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-build	6f41321d5296b83d
+5576	6113	7755682410136468	D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-install	da08275ca993dcbc
+6114	6630	7755682415296466	cjson-prefix/src/cjson-stamp/cjson-test	93e220d188f8b1c3
+6114	6630	7755682415296466	D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-test	93e220d188f8b1c3
+6630	7420	7755682423206470	CMakeFiles/cjson-complete	6e8cb71977fa4b95
+6630	7420	7755682423206470	cjson-prefix/src/cjson-stamp/cjson-done	6e8cb71977fa4b95
+6630	7420	7755682423206470	D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/CMakeFiles/cjson-complete	6e8cb71977fa4b95
+6630	7420	7755682423206470	D:/0730/ohos_sdl2/ohos_sdl2/ohos-project/entry/.cxx/default/default/debug/x86_64/cjson-download/cjson-prefix/src/cjson-stamp/cjson-done	6e8cb71977fa4b95

@@ -1,0 +1,5 @@
+D:\1224\ohos_sdl2\CMakeLists.txt
+D:\1224\ohos_sdl2\ohos-project\entry\.cxx\default\default\debug\arm64-v8a\cjson-source\CMakeLists.txt
+D:\1224\ohos_sdl2\ohos-project\entry\.cxx\default\default\debug\arm64-v8a\cjson-source\fuzzing\CMakeLists.txt
+D:\1224\ohos_sdl2\ohos-project\entry\.cxx\default\default\debug\arm64-v8a\cjson-source\tests\CMakeLists.txt
+D:\1224\ohos_sdl2\ohos-project\entry\src\main\cpp\CMakeLists.txt

@@ -1,0 +1,44 @@
+[2025-07-31T15:52:19.937] [DEBUG] debug-file - clang: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohoskeyboard.c:510:5: warning: call to undeclared function 'SDL_Log'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    SDL_Log("OHOS TranslateKeycode, unknown keycode=%d\n", keycode);
+    ^
+1 warning generated.
+[26/38] Building C object sdl2/CMakeFiles/SDL2-static.dir/src/video/ohos/SDL_ohosevents.c.o
+clang: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohosevents.c:114:17: warning: call to undeclared function 'OHOS_StartTextInput'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+                OHOS_StartTextInput(thisDevice); /* Only showTextInput */
+                ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/video/ohos/SDL_ohosevents.c:178:17: warning: call to undeclared function 'OHOS_StartTextInput'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+                OHOS_StartTextInput(thisDevice->windows); /* Only showTextInput */
+                ^
+2 warnings generated.
+[27/38] Building C object sdl2/CMakeFiles/SDL2-static.dir/src/audio/ohos/SDL_ohosaudiomanager.c.o
+clang: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+D:/0730/ohos_sdl2/ohos_sdl2/src/audio/ohos/SDL_ohosaudiomanager.c:345:93: warning: incompatible pointer types passing 'int *' to parameter of type 'OH_AudioStream_SampleFormat *' [-Wincompatible-pointer-types]
+        if (AUDIOSTREAM_SUCCESS != OH_AudioCapturer_GetSampleFormat(private->audioCapturer, &audioFormat)) {
+                                                                                            ^~~~~~~~~~~~
+D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/sysroot/usr/include/ohaudio/native_audiocapturer.h:200:34: note: passing argument to parameter 'sampleFormat' here
+    OH_AudioStream_SampleFormat* sampleFormat);
+                                 ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/audio/ohos/SDL_ohosaudiomanager.c:366:93: warning: incompatible pointer types passing 'int *' to parameter of type 'OH_AudioStream_SampleFormat *' [-Wincompatible-pointer-types]
+        if (AUDIOSTREAM_SUCCESS != OH_AudioRenderer_GetSampleFormat(private->audioRenderer, &audioFormat)) {
+                                                                                            ^~~~~~~~~~~~
+D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/sysroot/usr/include/ohaudio/native_audiorenderer.h:185:34: note: passing argument to parameter 'sampleFormat' here
+    OH_AudioStream_SampleFormat* sampleFormat);
+                                 ^
+D:/0730/ohos_sdl2/ohos_sdl2/src/audio/ohos/SDL_ohosaudiomanager.c:584:8: warning: type specifier missing, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]
+static OHOSAUDIO_NATIVE_CloseRender(SDL_AudioDevice *device)
+~~~~~~ ^
+int
+D:/0730/ohos_sdl2/ohos_sdl2/src/audio/ohos/SDL_ohosaudiomanager.c:626:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+D:/0730/ohos_sdl2/ohos_sdl2/src/audio/ohos/SDL_ohosaudiomanager.c:40:29: warning: unused variable 'gAudioRendorStatus' [-Wunused-variable]
+static OH_AudioStream_State gAudioRendorStatus;
+                            ^
+5 warnings generated.
+[28/38] Building C object sdl2/CMakeFiles/SDL2-static.dir/src/video/ohos/SDL_ohostouch.c.o
+
+[2025-07-31T15:52:19.956] [DEBUG] debug-file - clang: warning: argument unused during compilation: '--gcc-toolchain=D:/5.1.1.420/DevEco Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+[29/38] Building C object sdl2/CMakeFiles/SDL2-static.dir/src/video/ohos/SDL_ohosmouse.c.o
+

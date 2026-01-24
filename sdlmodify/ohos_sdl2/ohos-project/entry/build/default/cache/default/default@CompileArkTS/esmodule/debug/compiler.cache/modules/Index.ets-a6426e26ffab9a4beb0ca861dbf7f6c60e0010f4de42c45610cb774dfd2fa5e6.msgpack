@@ -1,0 +1,267 @@
+Ôr@Ÿªassertions¤code´customTransformCache¬dependencies¢id¤meta±moduleSideEffects¬originalCode±originalSourcemap«resolvedIds®sourcemapChainµsyntheticNamedExportsµtransformDependencies®transformFiles¨cacheAstÔrAÚ[if (!("finalizeConstruction" in ViewPU.prototype)) {
+    Reflect.set(ViewPU.prototype, "finalizeConstruction", () => { });
+}
+/*
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { notifySdlPageShow, notifySdlAboutToAppear, notifySdlAboutToDisappear, notifySdlPageHide, } from '../service/SdlModule';
+import display from '@ohos.display';
+import window from "@ohos.window";
+import qt from 'libentry.so';
+let storage = LocalStorage.getShared();
+let rootNode;
+class Index extends ViewPU {
+    constructor(parent, params, __localStorage, elmtId = -1, paramsLambda = undefined, extraInfo) {
+        super(parent, __localStorage, elmtId, extraInfo);
+        if (typeof paramsLambda === "function") {
+            this.paramsGenerator_ = paramsLambda;
+        }
+        this.mWidth = 100;
+        this.mHeight = 100;
+        this.x = 0;
+        this.y = 0;
+        this.setInitiallyProvidedValue(params);
+        this.finalizeConstruction();
+    }
+    setInitiallyProvidedValue(params) {
+        if (params.mWidth !== undefined) {
+            this.mWidth = params.mWidth;
+        }
+        if (params.mHeight !== undefined) {
+            this.mHeight = params.mHeight;
+        }
+        if (params.x !== undefined) {
+            this.x = params.x;
+        }
+        if (params.y !== undefined) {
+            this.y = params.y;
+        }
+    }
+    updateStateVars(params) {
+    }
+    purgeVariableDependenciesOnElmtId(rmElmtId) {
+    }
+    aboutToBeDeleted() {
+        SubscriberManager.Get().delete(this.id__());
+        this.aboutToBeDeletedInternal();
+    }
+    aboutToAppear() {
+        let windowStage = storage.get('windowStage');
+        let windowClass = windowStage.getMainWindowSync();
+        let windowProperties = windowClass.getWindowProperties();
+        let windowRect = windowProperties.windowRect;
+        let windowAvoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
+        let topRect = windowAvoidArea.topRect;
+        let bottomRect = windowAvoidArea.bottomRect;
+        this.mWidth = windowRect.width;
+        this.mHeight = windowRect.height - topRect.height - bottomRect.height;
+    }
+    aboutToDisappear() {
+        qt.removeNode('RootXC');
+        notifySdlAboutToDisappear();
+    }
+    onPageShow() {
+        notifySdlPageShow();
+    }
+    onPageHide() {
+        notifySdlPageHide();
+    }
+    initialRender() {
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Stack.create({ alignContent: Alignment.TopStart });
+            Gesture.create(GesturePriority.Low);
+            PanGesture.create();
+            PanGesture.pop();
+            Gesture.pop();
+            Stack.onClick(() => {
+            });
+            Stack.width('100%');
+            Stack.height('100%');
+        }, Stack);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            XComponent.create({
+                id: 'RootXC',
+                type: XComponentType.NODE,
+                libraryname: 'nativerender'
+            }, "com.example.myapplication/entry");
+            XComponent.onAppear(() => {
+                let scaledDensity = display.getDefaultDisplaySync().scaledDensity;
+                display.on('change', (id) => {
+                    const densityDPI = display.getDefaultDisplaySync().densityDPI.toString();
+                    const scaledDensity = display.getDefaultDisplaySync().scaledDensity.toString();
+                    const densityPixels = display.getDefaultDisplaySync().densityPixels.toString();
+                    const xDPI = display.getDefaultDisplaySync().xDPI.toString();
+                    const yDPI = display.getDefaultDisplaySync().yDPI.toString();
+                    const widthStr = display.getDefaultDisplaySync().width.toString();
+                    const heightStr = display.getDefaultDisplaySync().height.toString();
+                    console.log('densityDPI(æ˜¾ç¤ºè®¾å¤‡å±å¹•çš„ç‰©ç†åƒç´ å¯†åº¦ï¼Œè¡¨ç¤ºæ¯è‹±å¯¸ä¸Šçš„åƒç´ ç‚¹æ•°):' + densityDPI
+                        + '\nscaledDensity(æ˜¾ç¤ºè®¾å¤‡çš„æ˜¾ç¤ºå­—ä½“çš„ç¼©æ”¾å› å­):' + scaledDensity
+                        + '\ndensityPixels(æ˜¾ç¤ºè®¾å¤‡é€»è¾‘åƒç´ çš„å¯†åº¦ï¼Œä»£è¡¨ç‰©ç†åƒç´ ä¸é€»è¾‘åƒç´ çš„ç¼©æ”¾ç³»æ•°):' + densityPixels
+                        + '\nxDPI(xæ–¹å‘ä¸­æ¯è‹±å¯¸å±å¹•çš„ç¡®åˆ‡ç‰©ç†åƒç´ å€¼):' + xDPI
+                        + '\nyDPI(yæ–¹å‘ä¸­æ¯è‹±å¯¸å±å¹•çš„ç¡®åˆ‡ç‰©ç†åƒç´ å€¼):' + yDPI
+                        + '\nwidth:' + widthStr
+                        + '\nheight:' + heightStr);
+                });
+                qt.setScaledDensity(scaledDensity);
+                rootNode = qt.createNativeNode('RootXC', this.mWidth, this.mHeight, this.x, this.y);
+                notifySdlAboutToAppear(getContext(this), rootNode);
+            });
+            XComponent.width('100%');
+            XComponent.height('100%');
+            XComponent.id('RootXComponent');
+            XComponent.backgroundColor(Color.Yellow);
+        }, XComponent);
+        Stack.pop();
+    }
+    rerender() {
+        this.updateDirtyElements();
+    }
+    static getEntryName() {
+        return "Index";
+    }
+}
+if (storage && storage.routeName != undefined && storage.storage != undefined) {
+    registerNamedRoute(() => new Index(undefined, {}, storage.useSharedStorage ? LocalStorage.getShared() : storage.storage), storage.routeName, { bundleName: "com.example.myapplication", moduleName: "entry", pagePath: "pages/Index", pageFullPath: "entry/src/main/ets/pages/Index", integratedHsp: "false", moduleType: "followWithHap" });
+}
+else if (storage && storage.routeName != undefined && storage.storage == undefined) {
+    registerNamedRoute(() => new Index(undefined, {}, storage.useSharedStorage ? LocalStorage.getShared() : storage.storage), storage.routeName, { bundleName: "com.example.myapplication", moduleName: "entry", pagePath: "pages/Index", pageFullPath: "entry/src/main/ets/pages/Index", integratedHsp: "false", moduleType: "followWithHap" });
+}
+else if (storage && storage.routeName == undefined && storage.storage != undefined) {
+    registerNamedRoute(() => new Index(undefined, {}, storage.useSharedStorage ? LocalStorage.getShared() : storage.storage), "", { bundleName: "com.example.myapplication", moduleName: "entry", pagePath: "pages/Index", pageFullPath: "entry/src/main/ets/pages/Index", integratedHsp: "false", moduleType: "followWithHap" });
+}
+else if (storage && storage.useSharedStorage != undefined) {
+    registerNamedRoute(() => new Index(undefined, {}, storage.useSharedStorage ? LocalStorage.getShared() : undefined), "", { bundleName: "com.example.myapplication", moduleName: "entry", pagePath: "pages/Index", pageFullPath: "entry/src/main/ets/pages/Index", integratedHsp: "false", moduleType: "followWithHap" });
+}
+else {
+    registerNamedRoute(() => new Index(undefined, {}, storage), "", { bundleName: "com.example.myapplication", moduleName: "entry", pagePath: "pages/Index", pageFullPath: "entry/src/main/ets/pages/Index", integratedHsp: "false", moduleType: "followWithHap" });
+}
+//# sourceMappingURL=Index.js.mapÂ”ÙGD:\1224\ohos_sdl2\ohos-project\entry\src\main\ets\service\SdlModule.etsÙV hvigor_ignore_D:_601_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.display.d.tsÙU hvigor_ignore_D:_601_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.window.d.tsº hvigor_ignore_libentry.soÙAD:\1224\ohos_sdl2\ohos-project\entry\src\main\ets\pages\Index.etsÔrB›ªmoduleName±isLocalDependency¯isNodeEntryFile§pkgPath±belongProjectPath§pkgNameªpkgVersion±dependencyPkgInfo°belongModulePath§checker¬shouldEmitJs¥entryÃÂÙ$D:\1224\ohos_sdl2\ohos-project\entry¾D:\1224\ohos_sdl2\ohos-project¥entry¥1.0.0Ô  Ù$D:\1224\ohos_sdl2\ohos-project\entryÔrCÜ ®¬getNodeCount²getIdentifierCount®getSymbolCount¬getTypeCountµgetInstantiationCountµgetRelationCacheSizes±isUndefinedSymbol±isArgumentsSymbol¯isUnknownSymbol¯getMergedSymbol®getDiagnostics´getGlobalDiagnostics´getRecursionIdentity¶getUnmatchedProperties¹getTypeOfSymbolAtLocation¯getTypeOfSymbolÙ(getSymbolsOfParameterPropertyDeclaration·getDeclaredTypeOfSymbol³getPropertiesOfType±getPropertyOfTypeÙ"getPrivateIdentifierPropertyOfType·getTypeOfPropertyOfType²getIndexInfoOfType³getIndexInfosOfTypeºgetIndexInfosOfIndexSymbol³getSignaturesOfType²getIndexTypeOfType¬getIndexType¬getBaseTypes¸getBaseTypeOfLiteralType®getWidenedType³getTypeFromTypeNode°getParameterTypeÙ$getParameterIdentifierNameAtPosition¸getPromisedTypeOfPromise®getAwaitedType¸getReturnTypeOfSignature®isNullableType¯getNullableType²getNonNullableType²getNonOptionalType°getTypeArguments®typeToTypeNodeÙ$indexInfoToIndexSignatureDeclaration¿signatureToSignatureDeclaration²symbolToEntityName²symbolToExpression¬symbolToNodeÙ!symbolToTypeParameterDeclarations¼symbolToParameterDeclarationºtypeParameterToDeclaration±getSymbolsInScope³getSymbolAtLocation·getIndexInfosAtLocationÙ!getShorthandAssignmentValueSymbolÙ#getExportSpecifierLocalTargetSymbol·getExportSymbolOfSymbol±getTypeAtLocationºgetTypeAtLocationForLinterÙ tryGetTypeAtLocationWithoutCheckºgetTypeOfAssignmentPatternÙ*getPropertySymbolOfDestructuringAssignment±signatureToString¬typeToString®symbolToStringµtypePredicateToString®writeSignature©writeType«writeSymbol²writeTypePredicate¼getAugmentedPropertiesOfType®getRootSymbols²getSymbolOfExpando±getContextualTypeÙ(getContextualTypeForObjectLiteralElementÙ#getContextualTypeForArgumentAtIndexÙ getContextualTypeForJsxAttribute²isContextSensitiveÙ!getTypeOfPropertyOfContextualTypeµgetFullyQualifiedNameÙ#tryGetResolvedSignatureWithoutCheck´getResolvedSignatureÙ/getResolvedSignatureForStringLiteralCompletionsÙ$getResolvedSignatureForSignatureHelpµgetExpandedParameters¹hasEffectiveRestParameterºcontainsArgumentsReference°getConstantValueµisValidPropertyAccessÙ#isValidPropertyAccessForCompletions»getSignatureFromDeclarationºisImplementationOfOverload¹getImmediateAliasedSymbol°getAliasedSymbol¯getEmitResolver²getExportsOfModule¿getExportsAndPropertiesOfModuleÙ forEachExportAndPropertyOfModule¯getSymbolWalker±getAmbientModules¹getJsxIntrinsicTagNamesAt³isOptionalParameter»tryGetMemberInModuleExportsÙ(tryGetMemberInModuleExportsAndProperties´tryFindAmbientModuleÙ(tryFindAmbientModuleWithoutAugmentations¯getApparentType¬getUnionType²isTypeAssignableTo³createAnonymousType¯createSignature¬createSymbol¯createIndexInfoªgetAnyType­getStringType­getNumberType±createPromiseType¯createArrayType¹getElementTypeOfArrayType®getBooleanType¬getFalseType«getTrueType«getVoidType°getUndefinedType«getNullType¯getESSymbolType¬getNeverType¯getOptionalType®getPromiseType²getPromiseLikeType´getAsyncIterableType²isSymbolAccessible«isArrayType«isTupleType¯isArrayLikeTypeÙ#isTypeInvalidDueToUnionDiscriminantºgetExactOptionalProperties¿getAllPossiblePropertiesOfTypesÙ(getSuggestedSymbolForNonexistentPropertyÙ#getSuggestionForNonexistentPropertyÙ,getSuggestedSymbolForNonexistentJSXAttributeÙ&getSuggestedSymbolForNonexistentSymbolÙ!getSuggestionForNonexistentSymbolÙ&getSuggestedSymbolForNonexistentModuleÙ!getSuggestionForNonexistentExportÙ+getSuggestedSymbolForNonexistentClassMember·getBaseConstraintOfType»getDefaultFromTypeParameter«resolveName¯getJsxNamespaceµgetJsxFragmentFactory¸getAccessibleSymbolChain»getTypePredicateOfSignature¹resolveExternalModuleName»resolveExternalModuleSymbol°tryGetThisTypeAt¹getTypeArgumentConstraint¸getSuggestionDiagnostics¸runWithCancellationTokenÙ3getLocalTypeParametersOfClassOrInterfaceOrTypeAlias´isDeclarationVisible´isPropertyAccessible»getTypeOnlyAliasDeclaration¿getMemberOverrideModifierStatusÙ!isTypeParameterPossiblyReferenced²getConstEnumRelate´clearConstEnumRelateµdeleteConstEnumRelateÙ$getTypeArgumentsForResolvedSignatureµgetCheckedSourceFilesÙ"collectHaveTsNoCheckFilesForLinter·clearQualifiedNameCache®isStaticRecord²isStaticSourceFileÔ  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  ÃÃÚÖ/*
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import {
+  notifySdlPageShow,
+  notifySdlAboutToAppear,
+  notifySdlAboutToDisappear,
+  notifySdlPageHide,
+} from '../service/SdlModule'
+
+import display from '@ohos.display'
+import { window } from '@kit.ArkUI'
+import qt from 'libentry.so'
+
+let storage = LocalStorage.getShared()
+let rootNode: object
+
+@Entry(storage)
+@Component
+struct Index {
+  private mWidth: number = 100
+  private mHeight: number = 100
+  private x: number = 0
+  private y: number = 0
+  aboutToAppear(): void {
+    let windowStage = storage.get<window.WindowStage>('windowStage') as window.WindowStage
+    let windowClass = windowStage.getMainWindowSync()
+    let windowProperties = windowClass.getWindowProperties()
+    let windowRect = windowProperties.windowRect
+    let windowAvoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM)
+    let topRect = windowAvoidArea.topRect
+    let bottomRect = windowAvoidArea.bottomRect
+
+    this.mWidth = windowRect.width
+    this.mHeight = windowRect.height - topRect.height - bottomRect.height
+  }
+
+  aboutToDisappear(): void {
+    qt.removeNode('RootXC');
+    notifySdlAboutToDisappear()
+  }
+
+  onPageShow(): void {
+    notifySdlPageShow()
+  }
+
+  onPageHide(): void {
+    notifySdlPageHide()
+  }
+
+  build() {
+    Stack({ alignContent: Alignment.TopStart }) {
+      XComponent({
+        id: 'RootXC',
+        type: XComponentType.NODE,
+        libraryname: 'nativerender'
+      })
+        .onAppear(() => {
+          let scaledDensity = display.getDefaultDisplaySync().scaledDensity;
+          display.on('change', (id: number) => {
+            const densityDPI = display.getDefaultDisplaySync().densityDPI.toString()
+            const scaledDensity = display.getDefaultDisplaySync().scaledDensity.toString()
+            const densityPixels = display.getDefaultDisplaySync().densityPixels.toString()
+            const xDPI = display.getDefaultDisplaySync().xDPI.toString()
+            const yDPI = display.getDefaultDisplaySync().yDPI.toString()
+            const widthStr = display.getDefaultDisplaySync().width.toString()
+            const heightStr = display.getDefaultDisplaySync().height.toString()
+            console.log('densityDPI(æ˜¾ç¤ºè®¾å¤‡å±å¹•çš„ç‰©ç†åƒç´ å¯†åº¦ï¼Œè¡¨ç¤ºæ¯è‹±å¯¸ä¸Šçš„åƒç´ ç‚¹æ•°):' + densityDPI
+              + '\nscaledDensity(æ˜¾ç¤ºè®¾å¤‡çš„æ˜¾ç¤ºå­—ä½“çš„ç¼©æ”¾å› å­):' + scaledDensity
+              + '\ndensityPixels(æ˜¾ç¤ºè®¾å¤‡é€»è¾‘åƒç´ çš„å¯†åº¦ï¼Œä»£è¡¨ç‰©ç†åƒç´ ä¸é€»è¾‘åƒç´ çš„ç¼©æ”¾ç³»æ•°):' + densityPixels
+              + '\nxDPI(xæ–¹å‘ä¸­æ¯è‹±å¯¸å±å¹•çš„ç¡®åˆ‡ç‰©ç†åƒç´ å€¼):' + xDPI
+              + '\nyDPI(yæ–¹å‘ä¸­æ¯è‹±å¯¸å±å¹•çš„ç¡®åˆ‡ç‰©ç†åƒç´ å€¼):' + yDPI
+              + '\nwidth:' + widthStr
+              + '\nheight:' + heightStr)
+
+          })
+          qt.setScaledDensity(scaledDensity)
+          rootNode = qt.createNativeNode('RootXC', this.mWidth, this.mHeight, this.x, this.y)
+          notifySdlAboutToAppear(getContext(this), rootNode)
+        })
+        .width('100%')
+        .height('100%')
+        .id('RootXComponent')
+        .backgroundColor(Color.Yellow)
+    }
+    .gesture(PanGesture())
+    .onClick(() => {
+    })
+    .width('100%')
+    .height('100%')
+  }
+}
+ÀÔrD”­@ohos.display¬@ohos.window«libentry.so´../service/SdlModuleÔrE—ªassertions¨external¢id¤meta±moduleSideEffectsªresolvedByµsyntheticNamedExportsAÃÙV hvigor_ignore_D:_601_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.display.d.tsÔrF‘¯hostModulesInfo’ÔrG’²hostDependencyName®hostModuleName­@ohos.display¥entryG­@ohos.display¥entryÃªoh-resolveÂEAÃÙU hvigor_ignore_D:_601_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.window.d.tsF“G¬@ohos.window¥entryG¬@ohos.window¥entryG¬@ohos.window¥entryÃªoh-resolveÂEAÃº hvigor_ignore_libentry.soF‘G«libentry.so¥entryÃªoh-resolveÂEAÂÙGD:\1224\ohos_sdl2\ohos-project\entry\src\main\ets\service\SdlModule.etsAÃªoh-resolveÂ“ÔrH–§version¤fileªsourceRoot§sources¥names¨mappings¨Index.js ‘©Index.etsÜ “‘”    ‘” ”   ” ”	 ” ” ”2 ”4 ”ÌM ”ÌO ”Ì` ”Ìc ”Ìi ”Ì ”Ì€ –”   ” ” ” ”# #”$ #–”   ” 	” ” ”! #”" #–”   ” ”	 	” ” ” ™”   ” ” ” ” ” ”$ $”& &”' &””   ” ” ” ’” ” ‘”  ’”  ”  ’” !” !’” "” "’” #” #‘” ’” $” $›” %” %” %” %”! %”" %”% %!”& %6”3 %ÌC”4 %ÌZ”5 %ÌZ™” &” &” &” &”% &!”& &"”7 &3”9 &5”: &5™” '” '” '” '”* '&”+ ''”> ':”Ì@ '<”ÌA '<˜” (” (” (” (”) (%”* (&”4 (0”5 (0Ÿ” )” )” )” )”) )%”* )&”< )8”= )9”ÌC )?”ÌD )Ì@”ÌQ )ÌM”ÌR )ÌN”Ì] )ÌY”Ì^ )ÌZ”Ì_ )ÌZ˜” *” *” *” *”% *!”& *"”- *)”. *)˜” +” +” +” +”( +$”) +%”3 +/”4 +/™” -” -” -	” -” -”  -”! -”& -"”' -"Ü ” .” .” .	” .” .”! .”" .”( .$”+ .'”2 ..”3 ./”9 .5”< .8”ÌF .ÌB”ÌG .ÌC”ÌM .ÌI”ÌN .ÌI’” /” /’” 1” 1˜” 2”
+ 2” 2” 2” 2” 2” 2”  2”” 3”! 3”# 3”$ 3’” 4” 4’” 6” 6”” 7” 7” 7” 7’” 8” 8’” :” :”” ;” ;” ;” ;’” <” <‘” >š” ?” ?	” ?
+” ?”' ?”) ?”2 ?#”3 ?$”; ?,”= ?.’” Ìa” Ìa’” Ìa” Ìa—” ?” ?	” Ìb” Ìb” Ìb” Ìb” Ìb’” Ìc” Ìc–” ?” ?	” Ìd” Ìd
+” Ìd” Ìd–” ?” ?	” Ìe” Ìe” Ìe” Ìe“” Ì@” Ì@” Ì@”” ÌA” ÌA
+” ÌA” ÌA–” ÌB” ÌB” ÌB”$ ÌB”% ÌB”) ÌB!”” ÌC” ÌC” ÌC”+ ÌC#‘” ÌD—” Ì@” Ì@” ÌE	” ÌE”  ÌE”# ÌE”% ÌE›” ÌF
+” ÌF”! ÌF”$ ÌF”+ ÌF%”, ÌF&”ÌA ÌF;”ÌC ÌF=”ÌD ÌF>”ÌQ ÌFÌK”ÌR ÌFÌL›” ÌG
+” ÌG” ÌG” ÌG” ÌG”# ÌG”% ÌG”& ÌG ”( ÌG*”* ÌG,”, ÌG.” ÌH” ÌH”$ ÌH”' ÌH”. ÌH&”/ ÌH'”ÌD ÌH<”ÌF ÌH>”ÌG ÌH?”ÌQ ÌHÌI”ÌR ÌHÌJ”ÌZ ÌHÌR”Ì\ ÌHÌT”Ì] ÌHÌT” ÌI” ÌI”' ÌI”* ÌI"”1 ÌI)”2 ÌI*”ÌG ÌI?”ÌI ÌIÌA”ÌJ ÌIÌB”ÌW ÌIÌO”ÌX ÌIÌP”Ì` ÌIÌX”Ìb ÌIÌZ”Ìc ÌIÌZ” ÌJ” ÌJ”' ÌJ”* ÌJ"”1 ÌJ)”2 ÌJ*”ÌG ÌJ?”ÌI ÌJÌA”ÌJ ÌJÌB”ÌW ÌJÌO”ÌX ÌJÌP”Ì` ÌJÌX”Ìb ÌJÌZ”Ìc ÌJÌZ” ÌK” ÌK” ÌK”! ÌK”( ÌK ”) ÌK!”> ÌK6”Ì@ ÌK8”ÌA ÌK9”ÌE ÌK=”ÌF ÌK>”ÌN ÌKÌF”ÌP ÌKÌH”ÌQ ÌKÌH” ÌL” ÌL” ÌL”! ÌL”( ÌL ”) ÌL!”> ÌL6”Ì@ ÌL8”ÌA ÌL9”ÌE ÌL=”ÌF ÌL>”ÌN ÌLÌF”ÌP ÌLÌH”ÌQ ÌLÌH” ÌM” ÌM”" ÌM”% ÌM”, ÌM$”- ÌM%”ÌB ÌM:”ÌD ÌM<”ÌE ÌM=”ÌJ ÌMÌB”ÌK ÌMÌC”ÌS ÌMÌK”ÌU ÌMÌM”ÌV ÌMÌM” ÌN” ÌN”# ÌN”& ÌN”- ÌN%”. ÌN&”ÌC ÌN;”ÌE ÌN=”ÌF ÌN>”ÌL ÌNÌD”ÌM ÌNÌE”ÌU ÌNÌM”ÌW ÌNÌO”ÌX ÌNÌO˜” ÌO” ÌO” ÌO” ÌO”  ÌO”ÌH ÌOÌ@”ÌK ÌOÌC”ÌU ÌOÌM”” ÌP”< ÌP2”? ÌP5”ÌL ÌPÌB”” ÌQ”ÌJ ÌQÌ@”ÌM ÌQÌC”ÌZ ÌQÌP”” ÌR”6 ÌR,”9 ÌR/”= ÌR3”” ÌS”6 ÌS,”9 ÌS/”= ÌS3”” ÌT”$ ÌT”' ÌT”/ ÌT%–” ÌU”% ÌU”( ÌU”1 ÌU'”2 ÌU(”3 ÌU(”” ÌW
+” ÌW” ÌW” ÌW˜” ÌX
+” ÌX” ÌX”# ÌX”$ ÌX”1 ÌX+”2 ÌX,”3 ÌX,Ü ” ÌY
+” ÌY” ÌY” ÌY” ÌY”. ÌY(”/ ÌY)”7 ÌY1”9 ÌY3”= ÌY7”> ÌY8”ÌD ÌY>”ÌF ÌYÌ@”ÌJ ÌYÌD”ÌK ÌYÌE”ÌR ÌYÌL”ÌT ÌYÌN”ÌX ÌYÌR”ÌY ÌYÌS”ÌZ ÌYÌT”Ì\ ÌYÌV”Ì` ÌYÌZ”Ìa ÌYÌ[”Ìb ÌYÌ\”Ìc ÌYÌ]”Ìd ÌYÌ]›” ÌZ
+”& ÌZ ”' ÌZ!”1 ÌZ+”2 ÌZ,”6 ÌZ0”7 ÌZ1”9 ÌZ3”ÌA ÌZ;”ÌB ÌZ<”ÌC ÌZ<’” Ì[” Ì[	–” Ì@” Ì@” Ì\	” Ì\” Ì\”# Ì\–” Ì@” Ì@” Ì]	” Ì]” Ì]”$ Ì]–” Ì@” Ì@” Ì^	” Ì^” Ì^”* Ì^˜” Ì@” Ì@” Ì_	”& Ì_”' Ì_”, Ì_”- Ì_”3 Ì_%’” ?” ?	‘” Ìf–” ” ” ” ”1 ”8 –”6 ”= ”Ìl ”Ìs ”Ì~ ”Ì… –”	 ” ” ” ”6 ”= –”6 ”= ”Ìl ”Ìs ”Ì~ ”Ì… –”	 ” ” ” ”6 ”= ””6 ”= ”Ìl ”Ìs ””	 ” ” ” ’”6 ”= ’”6 ”= ÔrI–§version¤file§sources®sourcesContent¥names¨mappingsÀ‘À‘ÀÜ •‘”    ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”  	 ‘”  
+ ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”    ‘”  ! ‘”  " ‘”  # ‘”  $ ‘”  % ‘”  & ‘”  ' ‘”  ( ‘”  ) ‘”  * ‘”  + ‘”  , ‘”  - ‘”  . ‘”  / ‘”  0 ‘”  1 ‘”  2 ‘”  3 ‘”  4 ‘”  5 ‘”  6 ‘”  7 ‘”  8 ‘”  9 ‘”  : ‘”  ; ‘”  < ‘”  = ‘”  > ‘”  ? ‘”  Ì@ ‘”  ÌA ‘”  ÌB ‘”  ÌC ‘”  ÌD ‘”  ÌE ‘”  ÌF ‘”  ÌG ‘”  ÌH ‘”  ÌI ‘”  ÌJ ‘”  ÌK ‘”  ÌL ‘”  ÌM ‘”  ÌN ‘”  ÌO ‘”  ÌP ‘”  ÌQ ‘”  ÌR ‘”  ÌS ‘”  ÌT ‘”  ÌU ‘”  ÌV ‘”  ÌW ‘”  ÌX ‘”  ÌY ‘”  ÌZ ‘”  Ì[ ‘”  Ì\ ‘”  Ì] ‘”  Ì^ ‘”  Ì_ ‘”  Ì` ‘”  Ìa ‘”  Ìb ‘”  Ìc ‘”  Ìd ‘”  Ìe ‘”  Ìf ‘”  Ìg ‘”  Ìh ‘”  Ìi ‘”  Ìj ‘”  Ìk ‘”  Ìl ‘”  Ìm ‘”  Ìn ‘”  Ìo ‘”  Ìp ‘”  Ìq ‘”  Ìr ‘”  Ìs ‘”  Ìt ‘”  Ìu ‘”  Ìv ‘”  Ìw ‘”  Ìx ‘”  Ìy ‘”  Ìz ‘”  Ì{ ‘”  Ì| ‘”  Ì} ‘”  Ì~ ‘”  Ì ‘”  Ì€ ‘”  Ì ‘”  Ì‚ ‘”  Ìƒ ‘”  Ì„ ‘”  Ì… ‘”  Ì† ‘”  Ì‡ ‘”  Ìˆ ‘”  Ì‰ ‘”  ÌŠ ‘”  Ì‹ ‘”  ÌŒ ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì‘ ‘”  Ì’ ‘”  Ì“ ‘”  Ì” ÔrJ’§missing¦pluginÃ¦genAbcÂÔ  ÔrK”²dynamicImportCache¹exportAllDeclarationCache»exportNamedDeclarationCache«importCache”ÔrL•¤type¥start£endªspecifiers¦source±ImportDeclarationÍîÍn”ÔrM•¤type¥start£end¨imported¥local¯ImportSpecifierÍ÷ÍÔrN”¤type¥start£end¤nameªIdentifierÍ÷Í±notifySdlPageShowNªIdentifierÍ÷Í±notifySdlPageShowM¯ImportSpecifierÍ
+Í NªIdentifierÍ
+Í ¶notifySdlAboutToAppearNªIdentifierÍ
+Í ¶notifySdlAboutToAppearM¯ImportSpecifierÍ"Í;NªIdentifierÍ"Í;¹notifySdlAboutToDisappearNªIdentifierÍ"Í;¹notifySdlAboutToDisappearM¯ImportSpecifierÍ=ÍNNªIdentifierÍ=ÍN±notifySdlPageHideNªIdentifierÍ=ÍN±notifySdlPageHideÔrO•¤type¥start£end¥value£raw§LiteralÍWÍm´../service/SdlModule¶'../service/SdlModule'L±ImportDeclarationÍpÍ”‘ÔrP”¤type¥start£end¥local¶ImportDefaultSpecifierÍwÍ~NªIdentifierÍwÍ~§displayO§LiteralÍ„Í“­@ohos.display¯'@ohos.display'L±ImportDeclarationÍ–Í¸‘P¶ImportDefaultSpecifierÍÍ£NªIdentifierÍÍ£¦windowO§LiteralÍ©Í·¬@ohos.window®"@ohos.window"L±ImportDeclarationÍºÍ×‘P¶ImportDefaultSpecifierÍÁÍÃNªIdentifierÍÁÍÃ¢qtO§LiteralÍÉÍÖ«libentry.so­'libentry.so'
