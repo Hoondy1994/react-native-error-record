@@ -1,0 +1,133 @@
+Fix: Skia Canvas circle disappears when returning to Details page
+
+Problem:
+- When entering Details page for the first time, Skia Canvas circles display normally
+- When returning to Details page, Skia Canvas circles disappear
+- Root cause: Pre-created RNInstance runs bundle in background without UI surface,
+  causing Skia components to fail attaching when reused
+
+Solution:
+- Add forceReloadOnAppear flag to BasePrecreateView
+- When forceReloadOnAppear=true, force re-run bundle even if pre-created instance exists
+- This ensures React components re-mount and Skia components re-attach properly
+
+Files modified:
+1. b/c/d/e/entry/src/main/ets/rn/BasePrecreateView.ets
+2. b/c/d/e/entry/src/main/ets/pages/PrecreateRN.ets
+3. b/c/d/e/entry/src/main/ets/pages/Goods.ets
+4. b/c/d/SampleProject/MainProject/src/bundles/Goods/GoodsMainPage.tsx
+
+--- a/b/c/d/e/entry/src/main/ets/rn/BasePrecreateView.ets
++++ b/b/c/d/e/entry/src/main/ets/rn/BasePrecreateView.ets
+@@ -33,6 +33,7 @@
+ export struct BasePrecreateView {
+   public appKey: string = 'app_name';
+   public bundlePath: string = 'bundle.harmony.js';
+   public initialProps: SurfaceProps = {};
++  public forceReloadOnAppear: boolean = false;
+   @StorageLink('rnInstances') rnInstances: ArrayList<CachedInstance> = new ArrayList();
+   @StorageLink('RNOHCoreContext') private rnohCoreContext: RNOHCoreContext | undefined = undefined;
+@@ -60,8 +61,10 @@
+     console.log("BasePrecreateView init RNInstance ID = ", this.rnInstance.getId());
+ 
+     const jsBundleExecutionStatus = instance.status;
+-    if (this.jsBundleProvider && jsBundleExecutionStatus === undefined) {
++    const shouldForceReload = this.shouldForceReload();
++    if (this.jsBundleProvider && (jsBundleExecutionStatus === undefined || shouldForceReload)) {
++      if (shouldForceReload) {
++        console.log("BasePrecreateView force reload enabled for appKey =", this.appKey);
++      } else {
+       console.log("BasePrecreateView RNInstance 未预加载");
++      }
+       await this.rnInstance.runJSBundle(this.jsBundleProvider);
+       this.shouldShow = true;
+       return;
+@@ -84,7 +87,9 @@
+   private async getOrCreateRNInstance(): Promise<CachedInstance> {
+     // 获取上次 disappear 时预创建的 RNInstance
+     this.shouldDestroyRNInstance = true;
+-    if (this.rnInstances.length > 0) {
++    const shouldSkipCache: boolean = this.shouldForceReload();
++    if (!shouldSkipCache && this.rnInstances.length > 0) {
+       console.log("BasePrecreateView getOrCreateRNInstance 获取预创建的 RNInstance：", this.rnInstances[0]);
+       const instance = this.rnInstances.removeByIndex(0);
+       console.log("BasePrecreateView status = ", instance.status);
+@@ -108,7 +113,7 @@
+     const rnohCoreContext: RNOHCoreContext = this.rnohCoreContext!;
+     const provider: JSBundleProvider = this.jsBundleProvider!;
+     // 预创建 RNInstance
+-    if (instances.length === 0) {
++    if (instances.length === 0 && !this.shouldForceReload()) {
+       const rnInstance = await rnohCoreContext.createAndRegisterRNInstance({
+         createRNPackages: createRNPackages,
+         enableNDKTextMeasuring: true,
+@@ -140,6 +145,10 @@
+     }
+   }
+ 
++  private shouldForceReload(): boolean {
++    return this.forceReloadOnAppear;
++  }
++
+   private async cleanUp() {
+     this.shouldShow = false;
+     if (this.shouldDestroyRNInstance) {
+--- a/b/c/d/e/entry/src/main/ets/pages/PrecreateRN.ets
++++ b/b/c/d/e/entry/src/main/ets/pages/PrecreateRN.ets
+@@ -10,6 +10,7 @@
+ 
+ @Component
+ export default struct PrecreateRN {
++  @Prop forceReloadOnAppear: boolean = false;
+   private bundlePath = 'bundle/bp/details.harmony.bundle';
+   private moduleName = 'Details';
+   container: Record<string, string | number> = {
+@@ -33,6 +34,7 @@
+         BasePrecreateView({
+           appKey: this.moduleName,
+           bundlePath: this.bundlePath,
+           initialProps: this.initProps,
++          forceReloadOnAppear: this.forceReloadOnAppear
+         })
+       }
+       .width('100%')
+--- a/b/c/d/e/entry/src/main/ets/pages/Goods.ets
++++ b/b/c/d/e/entry/src/main/ets/pages/Goods.ets
+@@ -26,8 +26,8 @@
+ 
+   @Builder
+   PageMap(name: string, param: string) {
+-    if (name === 'Details') {
+-      // Details({ name: param });
+-      PrecreateRN()
++    if (name === 'Details' || name === 'Details2') {
++      PrecreateRN({ forceReloadOnAppear: true })
+     } else if (name === 'PrecreateRN') {
+       PrecreateRN2();
+     } else if (name === 'MultiSurface') {
+@@ -47,7 +47,7 @@
+         if (path === "pages/Details") {
+           this.pagePathsGoods.pushPath({ name: "Details", param: "details1" });
+         } else if (path === "pages/Details2") {
+-          this.pagePathsGoods.pushPath({ name: "Details", param: "detail2" });
++          this.pagePathsGoods.pushPath({ name: "Details2", param: "detail2" });
+         } else if (path === "pages/DetailsMultiInstance") {
+           this.pagePathsGoods.pushPath({ name: "DetailsMultiInstance", param: "MultiInstance" });
+         } else if (path === "pages/PrecreateRN") {
+--- a/b/c/d/SampleProject/MainProject/src/bundles/Goods/GoodsMainPage.tsx
++++ b/b/c/d/SampleProject/MainProject/src/bundles/Goods/GoodsMainPage.tsx
+@@ -95,7 +95,7 @@
+         <GoodsButton
+           buttonText={'•跳转 Details2'}
+           onPress={() => {
+-            SampleTurboModule.pushStringToHarmony('pages/PrecreateRN', 1);
++            SampleTurboModule.pushStringToHarmony('pages/Details2', 1);
+           }}
+         />
+         <GoodsButton
+
+
+
+
+
+
